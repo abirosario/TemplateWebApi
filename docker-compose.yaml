@@ -1,0 +1,25 @@
+﻿version: "3.9"
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: MongoDbContainer
+    ports:
+      - 27017:27017
+
+  sqlserver:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    container_name: SqlServerContainer
+    ports:
+      - 1433:1433
+    environment:
+      SA_PASSWORD: "Rosario18"
+      ACCEPT_EULA: "Y"
+
+volumes:
+  mongo:
+    driver: local
+  mssqlsystem:
+    driver: local
+  mssqluser:
+    driver: local
